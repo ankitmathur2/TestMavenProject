@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" verbose="10">
   <test name="Test">
   <parameter name="TestURL" value="https://demo.openmrs.org/openmrs/login.htm"></parameter>
   <parameter name="TestUsername" value="Admin"></parameter>
-  <parameter name="TestPassword" value="Admin123"></parameter>
-    <classes>
+  <parameter name="TestPassword" value="Admin123"></parameter>  
+  <parameter name="TestFirstname" value="Vijay"></parameter>
+  <parameter name="TestMiddlename" value="Dinanath"></parameter>
+  <parameter name="TestLastname" value="Sharma"></parameter>
+  <parameter name="TestGender" value="Male"></parameter>
+  <parameter name="TestDate" value="21"></parameter>
+  <parameter name="TestMonth" value="June"></parameter>
+  <parameter name="TestYear" value="1976"></parameter>
+  <parameter name="TestAddress1" value="415 Berkeley Hill Dr"></parameter>
+  <parameter name="TestAddress2" value="Apt 1300"></parameter>
+  <parameter name="TestCity" value="Charlotte"></parameter>
+  <parameter name="TestState" value="NC"></parameter>
+  <parameter name="TestCountry" value="USA"></parameter>
+  <parameter name="TestZipcode" value="28262"></parameter>
+  <parameter name="TestPhoneNumber" value="9879870009"></parameter>
+  <parameter name="TestRelationType" value="Sibling"></parameter>
+  <parameter name="TestRelationName" value="Gaurav"></parameter>
+  <classes>
       <class name="Maven_PatientPortal.PatientPortal.PatientPortal"/>
     </classes>
   </test> <!-- Test -->

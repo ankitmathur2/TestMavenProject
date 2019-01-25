@@ -39,9 +39,9 @@ public class PatientPortal
 		public static String relationType = null;
 		public static String relationName = null;
 				
-		@Parameters({"TestURL","TestUsername","TestPassword","TestFirstname","TestMiddlename","TestLastname","TestGender","Testdate","Testmonth","Testyear"})
+		@Parameters({"TestURL","TestUsername","TestPassword","TestFirstname","TestMiddlename","TestLastname","TestGender","TestDate","TestMonth","TestYear","TestAddress1","TestAddress2","TestCity","TestState","TestCountry","TestZipcode","TestPhoneNumber","TestRelationType","TestRelationName"})
 		@BeforeClass
-		public void beforeRun(String TestURL, String TestUsername, String TestPassword, String TestFirstname, String TestMiddlename, String TestLastname, String TestGender, String Testdate, String Testmonth, String Testyear)
+		public void beforeRun(String TestURL, String TestUsername, String TestPassword, String TestFirstname, String TestMiddlename, String TestLastname, String TestGender, String TestDate, String TestMonth, String TestYear,String TestAddress1,String TestAddress2,String TestCity,String TestState,String TestCountry,String TestZipcode,String TestPhoneNumber,String TestRelationType,String TestRelationName)
 		{
 			url = TestURL;
 			username = TestUsername;
@@ -51,17 +51,28 @@ public class PatientPortal
 			middlename = TestMiddlename;
 			lastname = TestLastname;
 			gender = TestGender;
-			date = Testdate;
-			month = Testmonth;
-			year = Testyear;
+			date = TestDate;
+			month = TestMonth;
+			year = TestYear;
+			
+			address1 = TestAddress1;
+			address2 = TestAddress2;
+			city = TestCity;
+			state = TestState;
+			country = TestCountry;
+			zipcode = TestZipcode;
+			
+			phoneNumber = TestPhoneNumber;
+			relationType = TestRelationType;
+			relationName = TestRelationName;			
 		}
 		
 		@Test
-		public void runTest()
+		public void runTest() throws InterruptedException
 		{
 			Login();
-			Logout();
 			Registration();
+			Logout();
 		}
 		
 		//Login to application
@@ -83,11 +94,11 @@ public class PatientPortal
 		public void Logout()
 		{
 			driver.findElement(By.xpath("html/body/header/ul/li[3]/a")).click();
-			driver.close();
+			//driver.close();
 		}
 		
 		//Registering a new patient
-		public void Registration()
+		public void Registration() throws InterruptedException
 		{
 			//Name
 			driver.findElement(By.xpath(".//*[@id='referenceapplication-registrationapp-registerPatient-homepageLink-referenceapplication-registrationapp-registerPatient-homepageLink-extension']")).click();  
@@ -146,5 +157,11 @@ public class PatientPortal
 			driver.findElement(By.xpath("//span[@id='confirmation_label']")).click();
 			driver.findElement(By.xpath("//span[@id='confirmation_label']")).click();
 			driver.findElement(By.xpath("//input[@id='submit']")).click();
+			
+			//driver.findElement(By.xpath("html/body/header/ul/li[3]/a/i")).click();
+			//driver.findElement(By.xpath("html/body/header/ul/li[3]/a")).click();	
+			
+			driver.close();
+			
 		}
 }
