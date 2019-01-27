@@ -1,44 +1,15 @@
 package Maven_PatientPortal.PatientPortal;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class PatientPortal 
+public class PatientPortal extends PatientPortalData
 {
-	//Login data
-		public WebDriver driver = null;
-		public static String url = null;
-		public static String username = null;
-		public static String password = null;
-		
-		//Registration data
-		public static String firstname = null;
-		public static String middlename = null;
-		public static String lastname = null;
-		public static String gender = null;
-		public static String date = null;
-		public static String month = null;
-		public static String year = null;
-		
-		public static String address1 = null;
-		public static String address2 = null;
-		public static String city = null;
-		public static String state = null;
-		public static String country = null;
-		public static String zipcode = null;
-		
-		public static String phoneNumber = null;
-		
-		public static String relationType = null;
-		public static String relationName = null;
-				
 		@Parameters({"TestURL","TestUsername","TestPassword","TestFirstname","TestMiddlename","TestLastname","TestGender","TestDate","TestMonth","TestYear","TestAddress1","TestAddress2","TestCity","TestState","TestCountry","TestZipcode","TestPhoneNumber","TestRelationType","TestRelationName"})
 		@BeforeClass
 		public void beforeRun(String TestURL, String TestUsername, String TestPassword, String TestFirstname, String TestMiddlename, String TestLastname, String TestGender, String TestDate, String TestMonth, String TestYear,String TestAddress1,String TestAddress2,String TestCity,String TestState,String TestCountry,String TestZipcode,String TestPhoneNumber,String TestRelationType,String TestRelationName)
@@ -71,8 +42,8 @@ public class PatientPortal
 		public void runTest() throws InterruptedException
 		{
 			Login();
-			Registration();
-			Logout();
+			//Registration();
+			//Logout();
 		}
 		
 		//Login to application
@@ -162,6 +133,5 @@ public class PatientPortal
 			//driver.findElement(By.xpath("html/body/header/ul/li[3]/a")).click();	
 			
 			driver.close();
-			
-		}
+			}
 }
